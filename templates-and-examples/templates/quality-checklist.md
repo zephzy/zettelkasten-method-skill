@@ -32,4 +32,4 @@ Revise if:
 - The draft could have been written without the notes.
 - Source metadata is invented.
 
-中文说明：质量检查的目标不是让文本更花哨，而是保证卡片系统可积累、可追溯、可复用。
+质量检查的目标不是让文本更花哨，而是保证卡片系统可积累、可追溯、可复用。

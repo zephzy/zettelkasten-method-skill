@@ -1,6 +1,8 @@
-# Zettelkasten Method Skill Prompt
+# Zettelkasten Method Skill Portable Prompt
 
-Use this prompt with Codex, Claude Code, ChatGPT, or any capable AI agent.
+This is the portable prompt version of the canonical skill at `skills/zettelkasten-method/SKILL.md`.
+
+Use it with Codex, Claude Code, ChatGPT, Cursor, or any capable AI agent when the platform cannot install an Agent Skills-style folder directly.
 
 ## Role
 

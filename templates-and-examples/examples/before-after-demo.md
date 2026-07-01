@@ -23,4 +23,4 @@ The Zettelkasten workflow creates reusable building blocks:
 - Link notes explain relationships such as cause, tension, and application.
 - The draft is built from permanent notes and can be traced back to them.
 
-中文说明：普通总结给你一个“一次性答案”。Zettelkasten Method Skill 给你的是一组可以继续生长、链接和写作的知识资产。
+普通总结给你一个“一次性答案”。Zettelkasten Method Skill 给你的是一组可以继续生长、链接和写作的知识资产。

@@ -18,7 +18,7 @@ https://developers.openai.com/api/docs/guides/prompting
 ### F-001
 - Capture: Prompting is not just wording; it is a way to control behavior.
 - Why it caught attention: It reframes prompts as part of the system design.
-- Possible direction: Explain why prompt packs need quality gates.
+- Possible direction: Explain why reusable AI workflows need quality gates.
 
 ### F-002
 - Capture: Prompt improvement depends on testing, not guessing.
@@ -56,7 +56,7 @@ https://developers.openai.com/api/docs/guides/prompting
 - Location: https://developers.openai.com/api/docs/guides/prompting
 - Source claim: Production prompt work should be managed with care, including version control and systematic improvement.
 - Rewritten explanation: Prompts become maintainable when treated as evolving project assets rather than disposable chat messages.
-- Useful for: explaining why a prompt pack can be a real developer artifact.
+- Useful for: explaining why an AI workflow skill can be a real developer artifact.
 
 ## 4. Permanent Notes
 
@@ -77,7 +77,7 @@ https://developers.openai.com/api/docs/guides/prompting
 ### P-003 - Prompts become assets when they are versioned
 - Claim: A reusable prompt should be maintained like a project asset.
 - Explanation: Once a prompt controls a repeatable workflow, it needs examples, changelog-like reasoning, versioned revisions, and tests against sample inputs.
-- Example: This Zettelkasten prompt pack keeps templates and dry-run outputs so users can inspect expected behavior.
+- Example: This Zettelkasten skill keeps templates and dry-run outputs so users can inspect expected behavior.
 - Source basis: L-003
 - Possible links: P-002, P-004
 
@@ -100,7 +100,7 @@ https://developers.openai.com/api/docs/guides/prompting
 
 - `P-003` -> `P-004`
   - Relationship: asset management to quality control.
-  - Why this link matters: A maintained prompt pack needs output criteria so future changes can be judged.
+  - Why this link matters: A maintained AI workflow needs output criteria so future changes can be judged.
 
 - `P-001` -> existing note `[[Methodology distillation as prompt engineering]]`
   - Relationship: application.
@@ -110,7 +110,7 @@ https://developers.openai.com/api/docs/guides/prompting
 
 ## Working Title
 
-Prompt Packs Should Be Treated Like Knowledge Workflow Software
+Reusable AI Workflows Should Be Treated Like Knowledge Workflow Software
 
 ## Thesis
 
@@ -126,7 +126,7 @@ Reusable prompts become valuable when they are treated as behavior specification
    - Supported by: P-002
    - Point: Prompt quality improves by observing failures and revising instructions.
 
-3. Prompt packs should be versioned assets
+3. Workflow skills should be versioned assets
    - Supported by: P-003
    - Point: A reusable prompt needs examples and maintainable revisions.
 
@@ -136,13 +136,13 @@ Reusable prompts become valuable when they are treated as behavior specification
 
 ## 7. Short Draft
 
-# Prompt Packs Should Be Treated Like Knowledge Workflow Software
+# Reusable AI Workflows Should Be Treated Like Knowledge Workflow Software
 
 A reusable prompt is more than a clever instruction. It is a lightweight behavior specification for an AI system. The prompt tells the model what role to take, what constraints to respect, what output shape to follow, and what quality bar to meet. In that sense, prompt design is behavior design (P-001).
 
-This is why strong prompt packs should not be treated as one-off chat messages. They improve through feedback loops. A first version may produce useful output, but failures reveal where the workflow is under-specified. If permanent notes contain multiple ideas, the prompt needs a stronger atomicity rule. If links are only tags, the prompt needs relationship explanations. Reliable prompting grows through this cycle of test, observe, revise, and test again (P-002).
+This is why strong AI workflows should not be treated as one-off chat messages. They improve through feedback loops. A first version may produce useful output, but failures reveal where the workflow is under-specified. If permanent notes contain multiple ideas, the skill needs a stronger atomicity rule. If links are only tags, the skill needs relationship explanations. Reliable prompting grows through this cycle of test, observe, revise, and test again (P-002).
 
-Once a prompt controls a repeatable workflow, it becomes a project asset. It needs examples, expected outputs, and a clear record of what good behavior looks like. Versioning matters because a prompt pack can regress just like code: a new instruction can make outputs longer, vaguer, or less traceable (P-003).
+Once a skill controls a repeatable workflow, it becomes a project asset. It needs examples, expected outputs, and a clear record of what good behavior looks like. Versioning matters because an AI workflow can regress just like code: a new instruction can make outputs longer, vaguer, or less traceable (P-003).
 
 Structured output contracts make this process inspectable. A Zettelkasten prompt that requires source fields, note IDs, link explanations, and a quality report is easier to evaluate than a fluent summary. Users can see which stage succeeded and which stage needs repair (P-004). That is the difference between asking AI for an answer and building a reusable knowledge workflow.
 

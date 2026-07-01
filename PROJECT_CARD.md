@@ -2,7 +2,7 @@
 
 ## One-line Goal
 
-Create a bilingual, GitHub-ready prompt pack that turns raw learning material into Zettelkasten-style cards, links, outlines, drafts, and quality reports.
+Create a bilingual, GitHub-ready Agent Skills-style workflow that turns raw learning material into Zettelkasten-style cards, links, outlines, drafts, and quality reports.
 
 ## Positioning
 
@@ -17,7 +17,8 @@ This is a methodology-distillation skill, not a generic summarizer. It packages 
 
 ## v0.1 Scope
 
-- Platform-neutral prompt pack.
+- Agent Skills-style `SKILL.md`.
+- Platform-neutral portable prompt.
 - Markdown templates.
 - AI-learning sample source.
 - Complete dry-run output.
@@ -34,7 +35,7 @@ This is a methodology-distillation skill, not a generic summarizer. It packages 
 ## Success Criteria
 
 - A GitHub visitor understands the value in 30 seconds.
-- A user can copy one prompt and run the workflow immediately.
+- A user can install the skill folder or copy one portable prompt and run the workflow immediately.
 - The example output proves the project is more than a summary prompt.
 - The workflow enforces atomicity, traceability, linkability, own-words rewriting, and bottom-up synthesis.
 

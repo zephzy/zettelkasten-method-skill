@@ -2,35 +2,158 @@
 
 Turn AI reading into reusable Zettelkasten knowledge assets.
 
-Distill the Zettelkasten method into an executable AI workflow.
+把 AI 阅读变成可积累、可链接、可复用的卡片笔记知识资产。
 
-把 AI 阅读变成可复用的卡片笔记知识资产。
+This repository packages the Zettelkasten method as an Agent Skills-style workflow. It helps AI agents transform source material into fleeting notes, literature notes, permanent notes, meaningful links, bottom-up outlines, drafts, and quality reports.
 
-> Not another summarizer. This prompt pack helps AI agents convert raw material into traceable cards, meaningful links, bottom-up outlines, drafts, and quality reports.
+它不是“总结器提示词”，而是把卡片笔记法里的专家流程拆成可执行步骤，让 AI 帮你建立能继续生长的知识系统。
 
-## What It Does
+## Why It Exists
 
-Most AI tools summarize material. This prompt pack does something different:
+Most AI reading workflows stop at a polished summary. This skill is designed for people who want durable knowledge assets: notes that preserve sources, express ideas in your own words, link to other ideas, and become grounded drafts.
 
-1. Break raw material into fleeting notes.
-2. Rewrite source ideas into literature notes with traceable sources.
-3. Transform them into atomic permanent notes in your own words.
-4. Propose meaningful links between notes.
-5. Build a bottom-up outline from connected notes.
-6. Draft an article while preserving note provenance.
-7. Run a quality check against Zettelkasten principles.
+大多数 AI 阅读只产出一次性答案。这个 skill 更关注长期积累：来源可追溯、观点可拆分、卡片可链接，最后的文章能从卡片网络里长出来。
 
-中文说明：它不是“让 AI 帮你总结文章”，而是让 AI 按卡片笔记法的流程，把素材转化为可积累、可链接、可复用的知识资产。
+| Ordinary AI Summary | Zettelkasten Method Skill |
+| --- | --- |
+| Compresses the source | Converts material into reusable notes |
+| Produces one-off output | Builds a growing knowledge base |
+| Often loses provenance | Keeps source fields and note IDs |
+| Writes top-down | Synthesizes bottom-up from linked notes |
+| Optimizes for fluency | Checks atomicity, traceability, and link quality |
 
-## Two-minute Demo
+## Quick Start
 
-The demo uses the official OpenAI Prompting guide as a public AI-learning source:
+### Agent Skills-compatible tools
 
-- Source snapshot: [`openai-prompting-guide-demo/source-snapshot.md`](templates-and-examples/examples/openai-prompting-guide-demo/source-snapshot.md)
-- Ordinary summary baseline: [`openai-prompting-guide-demo/ordinary-summary.md`](templates-and-examples/examples/openai-prompting-guide-demo/ordinary-summary.md)
-- Zettelkasten dry-run output: [`openai-prompting-guide-demo/dry-run-output.md`](templates-and-examples/examples/openai-prompting-guide-demo/dry-run-output.md)
+Copy the skill folder into your agent's skills directory:
 
-What the dry run produces:
+```text
+skills/zettelkasten-method/
+```
+
+Then ask your agent:
+
+```text
+Use the Zettelkasten Method Skill on the source material below.
+Return fleeting notes, literature notes, permanent notes, proposed links,
+a topic outline, a short draft, and a quality report.
+
+Source:
+[paste material here]
+```
+
+如果你的工具支持 `SKILL.md` 风格的 skill 文件夹，优先使用这个方式。这样 agent 会把它当成一个可复用工作流，而不是一段临时提示词。
+
+### Any AI agent
+
+If your agent does not support skill folders, use the portable prompt:
+
+```text
+prompts/zettelkasten-method-skill.md
+```
+
+Paste the full prompt into ChatGPT, Claude, Codex, Cursor, or another capable agent, then provide your source material.
+
+如果平台暂时不支持安装 skill，就直接复制 portable prompt。输出结构和质量标准仍然与正式 skill 保持一致。
+
+### Try the demo
+
+Open the public-source dry run:
+
+- [Source snapshot](templates-and-examples/examples/openai-prompting-guide-demo/source-snapshot.md)
+- [Ordinary summary baseline](templates-and-examples/examples/openai-prompting-guide-demo/ordinary-summary.md)
+- [Zettelkasten dry-run output](templates-and-examples/examples/openai-prompting-guide-demo/dry-run-output.md)
+
+这个 demo 使用 OpenAI 官方 Prompting guide 的公开材料，展示同一份内容如何从普通总结变成可追溯、可链接、可复用的知识卡片。
+
+## What the Skill Produces
+
+```text
+Raw Material
+  -> Source Snapshot
+  -> Fleeting Notes
+  -> Literature Notes
+  -> Permanent Notes
+  -> Proposed Links
+  -> Topic Outline
+  -> Short Draft
+  -> Quality Report
+```
+
+The output is intentionally inspectable. Every literature note keeps source information, every permanent note is atomic, every link explains a relationship, and every draft claim should trace back to note IDs.
+
+输出不是为了“看起来很会写”，而是为了能检查、能复盘、能继续扩展。卡片、链接和初稿之间应该有清楚的证据链。
+
+## Repository Structure
+
+```text
+.
++-- skills/
+|   +-- zettelkasten-method/
+|       +-- SKILL.md
++-- prompts/
+|   +-- zettelkasten-method-skill.md
++-- templates-and-examples/
+|   +-- templates/
+|   +-- examples/
++-- PROJECT_CARD.md
++-- LICENSE
++-- README.md
+```
+
+- [`skills/zettelkasten-method/SKILL.md`](skills/zettelkasten-method/SKILL.md): canonical Agent Skills-style entrypoint.
+- [`prompts/zettelkasten-method-skill.md`](prompts/zettelkasten-method-skill.md): portable prompt for agents that cannot install skills.
+- [`templates-and-examples/templates/`](templates-and-examples/templates): reusable Markdown templates.
+- [`templates-and-examples/examples/`](templates-and-examples/examples): source material, before/after comparison, and dry-run outputs.
+
+## Skill Anatomy
+
+The canonical skill follows the common Agent Skills pattern:
+
+- YAML frontmatter with `name` and `description`.
+- An overview that defines the skill's purpose.
+- Input expectations and fallback behavior.
+- A fixed workflow from source snapshot to quality report.
+- Output contracts with stable note IDs.
+- Quality rules and failure modes.
+
+这种结构的好处是：别人打开仓库后能立刻看懂它是一个真正的 workflow skill，而不是散装提示词。
+
+## Example Invocation
+
+```text
+Use the Zettelkasten Method Skill on this article excerpt.
+
+Goal:
+- Build reusable notes for future AI-learning writing.
+
+Language:
+- Bilingual
+
+Source metadata:
+- Title: [title]
+- URL: [url]
+
+Source:
+[paste excerpt]
+```
+
+Expected sections:
+
+- `Source Snapshot`
+- `Fleeting Notes`
+- `Literature Notes`
+- `Permanent Notes`
+- `Proposed Links`
+- `Topic Outline`
+- `Short Draft`
+- `Quality Report`
+- `Next Actions`
+
+## Demo Result
+
+The OpenAI Prompting Guide demo produces:
 
 - 4 fleeting notes
 - 3 literature notes with the official source URL
@@ -40,88 +163,21 @@ What the dry run produces:
 - 1 short draft
 - 1 quality report
 
-中文说明：这个 demo 展示同一份材料如何从“普通总结”升级为“可继续生长的知识卡片系统”。
+它证明这个项目的重点不是“把文章压缩短一点”，而是把材料变成可以继续组织、连接和写作的知识资产。
 
-## Who It Is For
+## Good For
 
-- Students and researchers building a durable knowledge base.
-- Writers and creators who want grounded, non-generic drafts.
-- Obsidian / Markdown users who want AI-assisted note workflows.
-- AI learning communities that need a repeatable learning-to-writing system.
-
-## Quick Start
-
-1. Open [`prompts/zettelkasten-method-skill.md`](prompts/zettelkasten-method-skill.md).
-2. Copy the full prompt into your AI agent.
-3. Paste one article, paper excerpt, transcript, or reading note.
-4. Ask the agent to run the complete Zettelkasten workflow.
-
-Example request:
-
-```text
-Use the Zettelkasten Method Skill on the source material below.
-Output fleeting notes, literature notes, permanent notes, proposed links,
-a topic outline, a short draft, and a quality report.
-
-Source:
-[paste material here]
-```
-
-中文用法：
-
-```text
-请使用 Zettelkasten Method Skill 处理下面的学习材料。
-请输出闪念卡、文献卡、永久卡、关联链接、主题大纲、短文初稿和质量检查报告。
-```
-
-## Workflow
-
-```text
-Raw Material
-  -> Fleeting Notes
-  -> Literature Notes
-  -> Permanent Notes
-  -> Link Map
-  -> Topic Outline
-  -> Draft
-  -> Quality Report
-```
-
-## Why This Is Not Just AI Summary
-
-| Ordinary AI Summary | Zettelkasten Method Skill |
-| --- | --- |
-| Compresses the source | Converts source material into reusable notes |
-| Produces one-off output | Builds a growing knowledge base |
-| Often loses provenance | Keeps source fields and note IDs |
-| Writes top-down | Synthesizes bottom-up from linked notes |
-| Focuses on fluency | Checks atomicity, traceability, and link quality |
-
-## Included Files
-
-- [`prompts/zettelkasten-method-skill.md`](prompts/zettelkasten-method-skill.md): the core prompt pack.
-- [`templates-and-examples/templates/`](templates-and-examples/templates): reusable Markdown templates.
-- [`templates-and-examples/examples/source-ai-learning-excerpt.md`](templates-and-examples/examples/source-ai-learning-excerpt.md): sample source material.
-- [`templates-and-examples/examples/ai-learning-mini-kb/dry-run-output.md`](templates-and-examples/examples/ai-learning-mini-kb/dry-run-output.md): complete manual dry-run output.
-- [`templates-and-examples/examples/openai-prompting-guide-demo/dry-run-output.md`](templates-and-examples/examples/openai-prompting-guide-demo/dry-run-output.md): second public-source demo.
-- [`templates-and-examples/examples/before-after-demo.md`](templates-and-examples/examples/before-after-demo.md): summary-vs-method demo.
-
-## v0.1 Acceptance Criteria
-
-- Generates at least 3 fleeting notes.
-- Generates at least 2 literature notes with source fields.
-- Generates at least 2 permanent notes in the user's own words.
-- Proposes at least 3 links with relationship explanations.
-- Builds one topic outline.
-- Drafts one short article.
-- Produces one quality report.
+- students and researchers building a durable knowledge base
+- Obsidian or Markdown users who want AI-assisted note workflows
+- writers who need grounded drafts from accumulated notes
+- AI-learning communities that want repeatable reading-to-writing workflows
 
 ## Roadmap
 
-- v0.1: prompt pack, templates, example knowledge base, dry-run demo.
+- v0.1: Agent Skills-style workflow, portable prompt, templates, and demos.
 - v0.2: optional card-quality checker script.
 - v0.3: Obsidian vault starter kit.
-- v0.4: Claude Code / Codex skill packaging variants.
+- v0.4: lightweight eval cases for output quality regression.
 
 ## License
 
